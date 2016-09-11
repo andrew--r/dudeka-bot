@@ -1,0 +1,17 @@
+{
+  "name": "dudeka-bot",
+  "version": "1.0.0",
+  "description": "dudeka push notifications bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andrew Romanov",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.1.0",
+    "firebase": "^3.3.2",
+    "node-fetch": "^1.6.1"
+  }
+}

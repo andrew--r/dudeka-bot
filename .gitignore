@@ -1,0 +1,5 @@
+node_modules
+
+# Private info
+serviceAccountCredentials.json
+onesignal.json
