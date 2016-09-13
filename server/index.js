@@ -74,7 +74,7 @@ function onAddPurchase(eventName, eventId, oldPurchasesIds) {
     var purchaseId = snapshot.key;
     if (oldPurchasesIds.indexOf(purchaseId) !== -1) return;
 
-    console.log(`New purchase created in event "${event.name}", sending notification...`);
+    console.log(`New purchase created in event "${eventName}", sending notification...`);
 
     var notification = notifications.create({
       title: `${eventName} | Dudeka`,
