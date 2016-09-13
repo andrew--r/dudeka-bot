@@ -28,7 +28,11 @@ module.exports = {
 
     return new Promise((resolve, reject) => {
       var req = https.request(options, function(res) {
-        res.on('data', resolve);
+        res.on('data', (data) => {
+          var result = JSON.parse(data.toString());
+          if (result.errors && result.errors.length) return reject(errors[0]);
+          return result;
+        });
       });
 
       req.on('error', reject);
