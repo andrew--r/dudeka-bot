@@ -25,8 +25,8 @@ function addEventJob(eventId, eventEnd) {
       console.log(`${event.name} has ended, sending notification...`);
 
       var notification = notifications.create({
-        title: `Мероприятие «${event.name}» закончилось!`,
-        content: 'Не забудьте рассчитаться с друзьями :–)',
+        title: 'Потрачено',
+        content: `Мероприятие «${event.name}» закончилось! Не забудьте рассчитаться с друзьями :–)`,
         url: `https://dudeka.fuckingwebsite.ru/#/events/${eventId}`,
         filters: [{
           field: 'tag',
@@ -77,8 +77,8 @@ function onAddPurchase(eventName, eventId, oldPurchasesIds) {
     console.log(`New purchase created in event "${eventName}", sending notification...`);
 
     var notification = notifications.create({
-      title: `${eventName} | Dudeka`,
-      content: `В мероприятие добавлена новая покупка «${purchase.name}»`,
+      title: 'Потрачено',
+      content: `В мероприятие «${eventName}» добавлена новая покупка «${purchase.name}»`,
       url: `https://dudeka.fuckingwebsite.ru/#/events/${eventId}/purchases/${purchaseId}`,
       filters: [{
         field: 'tag',
