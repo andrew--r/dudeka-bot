@@ -4,6 +4,8 @@ var CronJob = require('cron').CronJob;
 
 var notifications = require('./notifications');
 
+var BASE_URI = 'https://wastd.ru';
+
 firebase.initializeApp({
   serviceAccount: './serviceAccountCredentials.json',
   databaseURL: 'https://dudeka-401e8.firebaseio.com'
@@ -27,7 +29,7 @@ function addEventJob(eventId, eventEnd) {
       var notification = notifications.create({
         title: 'Потрачено',
         content: `Мероприятие «${event.name}» закончилось! Не забудьте рассчитаться с друзьями :–)`,
-        url: `https://dudeka.fuckingwebsite.ru/#/events/${eventId}`,
+        url: `${BASE_URI}/events/${eventId}`,
         filters: [{
           field: 'tag',
           relation: '=',
@@ -79,7 +81,7 @@ function onAddPurchase(eventName, eventId, oldPurchasesIds) {
     var notification = notifications.create({
       title: 'Потрачено',
       content: `В мероприятие «${eventName}» добавлена новая покупка «${purchase.name}»`,
-      url: `https://dudeka.fuckingwebsite.ru/#/events/${eventId}/purchases/${purchaseId}`,
+      url: `${BASE_URI}/events/${eventId}/purchases/${purchaseId}`,
       filters: [{
         field: 'tag',
         relation: '=',
